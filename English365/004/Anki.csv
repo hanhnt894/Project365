@@ -1,11 +1,21 @@
-English,Vietnamese
-wake up,thức dậy
-have breakfast,ăn sáng
-go to work/school,đi làm/đi học
-watch TV,xem TV
-play sports,chơi thể thao
-cook,nấu ăn
-travel,du lịch
-take a shower,tắm
-go to bed,đi ngủ
-relax,thư giãn
+Type,Front,Back,IPA,Example,Tags
+Basic,wake up,thức dậy,/weɪk ʌp/,"I wake up at 6 AM every day.",Vocabulary
+Basic,have breakfast,ăn sáng,/hæv ˈbrekfəst/,"I have breakfast with my family.",Vocabulary
+Basic,go to work,đi làm,/ɡoʊ tə wɜːrk/,"I go to work at 8 AM.",Vocabulary
+Basic,watch TV,xem TV,/wɒtʃ ˌtiː ˈviː/,"She watches TV after dinner.",Vocabulary
+Basic,play sports,chơi thể thao,/pleɪ spɔːrts/,"He plays sports every weekend.",Vocabulary
+Basic,cook,nấu ăn,/kʊk/,"My mother cooks very well.",Vocabulary
+Basic,travel,du lịch,/ˈtrævəl/,"They travel to Da Nang every summer.",Vocabulary
+Basic,take a shower,tắm,/teɪk ə ˈʃaʊər/,"I take a shower in the morning.",Vocabulary
+Basic,go to bed,đi ngủ,/ɡoʊ tə bed/,"I go to bed at 10 PM.",Vocabulary
+Basic,relax,thư giãn,/rɪˈlæks/,"She relaxes by reading books.",Vocabulary
+Basic,"Present Simple - I/You/We/They","V (nguyên mẫu) - I play sports.",,,"I don't watch TV.",Grammar
+Basic,"Present Simple - He/She/It","V + s/es - She plays sports.",,,"He doesn't cook.",Grammar
+Basic,"Reading: What time does Lan wake up?","Lan wakes up at 6 AM.",,,"She usually wakes up at 6 AM and takes a shower.",Reading
+Basic,"Reading: What does Lan do after school?","She goes home and has lunch.",,,"After school, I go home and have lunch.",Reading
+Basic,Listening keyword: usually,thường thường,/ˈjuːʒuəli/,"I usually wake up at 6 AM.",Listening
+Basic,Listening keyword: finish,kết thúc,/ˈfɪnɪʃ/,"My classes finish at 11:30 AM.",Listening
+Basic,Speaking: go to work by bus,"Đi làm bằng xe buýt",,,"My father goes to work by bus every day.",Speaking
+Basic,Speaking: on weekends,vào cuối tuần,,,"Do you play sports on weekends?",Speaking
+Basic,Writing: sample about engineer,Engineer daily routine,,,"I work from 8 AM to 5 PM. After work I play football.",Writing
+Basic,Writing: use adverbs of frequency,Sử dụng trạng từ tần suất,,,"always, usually, sometimes, never",Writing
