@@ -42,7 +42,7 @@ function Show-Help {
     Write-Host "  help      Show this help message"
     Write-Host "  version   Show project version"
     Write-Host "  doctor    Check system prerequisites"
-    Write-Host "  start     Start a new day (Coming in Sprint 3)"
+    Write-Host "  start     Start a new day"
     Write-Host "  finish    Finish current day (Coming in Sprint 3)"
     Write-Host "  review    Review past lessons (Coming in Sprint 3)"
     Write-Host "  stats     Show learning stats (Coming in Sprint 3)"
@@ -130,6 +130,63 @@ function Invoke-Doctor {
     }
 }
 
+# ─── Start ──────────────────────────────────────────────
+
+function Get-DayFolder {
+    param([int]$DayNumber)
+    return "Day{0:D3}" -f $DayNumber
+}
+
+function Invoke-Start {
+    $cfg = Get-Config
+    if (-not $cfg) { return }
+
+    # 1. Git pull
+    Write-Host "Pulling latest changes..." -ForegroundColor Gray
+    git pull 2>&1 | Out-Null
+
+    # 2. Increment currentDay
+    $nextDay = $cfg.english365.currentDay + 1
+    $dayFolder = Get-DayFolder -DayNumber $nextDay
+    $engPath = Join-Path -Path $projectRoot -ChildPath $cfg.paths.english365
+    $dayPath = Join-Path -Path $engPath -ChildPath $dayFolder
+
+    # 3. Create day directory if missing
+    if (-not (Test-Path -LiteralPath $dayPath)) {
+        New-Item -ItemType Directory -Path $dayPath -Force | Out-Null
+        Write-Host "Created $dayFolder" -ForegroundColor Green
+    } else {
+        Write-Host "$dayFolder already exists" -ForegroundColor Yellow
+    }
+
+    # 4. Copy templates without overwrite
+    $tplPath = Join-Path -Path $projectRoot -ChildPath $cfg.paths.templates
+    if (Test-Path -LiteralPath $tplPath) {
+        Get-ChildItem -Path $tplPath -File | ForEach-Object {
+            $dest = Join-Path -Path $dayPath -ChildPath $_.Name
+            if (-not (Test-Path -LiteralPath $dest)) {
+                Copy-Item -LiteralPath $_.FullName -Destination $dest
+                Write-Host "  + $($_.Name)" -ForegroundColor Green
+            } else {
+                Write-Host "  ~ $($_.Name) (skipped)" -ForegroundColor DarkGray
+            }
+        }
+    }
+
+    Write-Host ""
+
+    # 5. Display checklist
+    Write-Host "===== Day $nextDay Checklist =====" -ForegroundColor Cyan
+    Write-Host "  [ ] Read Lesson.md" -ForegroundColor White
+    Write-Host "  [ ] Study Anki cards" -ForegroundColor White
+    Write-Host "  [ ] Write Reflection.md" -ForegroundColor White
+    Write-Host "  [ ] Review Progress.md" -ForegroundColor White
+    Write-Host ""
+
+    # 6. NOT updating config.json — that's for finish
+    Write-Host "Run '.\scripts\p365.ps1 finish' to mark day as complete." -ForegroundColor Gray
+}
+
 # ─── Main ────────────────────────────────────────────────
 
 $command = $args[0]
@@ -150,7 +207,7 @@ switch ($command.ToLower()) {
         Invoke-Doctor
     }
     "start" {
-        Write-Host "Coming in Sprint 3" -ForegroundColor Magenta
+        Invoke-Start
     }
     "finish" {
         Write-Host "Coming in Sprint 3" -ForegroundColor Magenta
