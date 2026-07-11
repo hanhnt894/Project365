@@ -1,0 +1,52 @@
+{
+  "project": {
+    "name": "Project365",
+    "version": "0.3.0",
+    "repository": "https://github.com/hanhnt894/Project365",
+    "language": "en",
+    "timezone": "Asia/Ho_Chi_Minh"
+  },
+  "english365": {
+    "startDay": 1,
+    "currentDay": 4,
+    "targetDay": 365,
+    "currentSprint": 3
+  },
+  "repository": {
+    "defaultBranch": "master",
+    "commitPrefix": "feat(day"
+  },
+  "review": {
+    "weekly": {
+      "enabled": true,
+      "dayOfWeek": "Sunday"
+    },
+    "monthly": {
+      "enabled": true,
+      "strategy": "LastDayOfMonth"
+    }
+  },
+  "aiCoach": {
+    "enabled": true,
+    "lessonGenerator": true,
+    "reflectionGenerator": true,
+    "reviewGenerator": true
+  },
+  "anki": {
+    "deckName": "English365",
+    "newCardsPerDay": 10,
+    "reviewLimit": 50
+  },
+  "paths": {
+    "english365": "English365",
+    "templates": "templates",
+    "scripts": "scripts",
+    "prompts": "prompts",
+    "docs": "docs"
+  },
+  "git": {
+    "autoPull": false,
+    "autoCommit": false,
+    "autoPush": false
+  }
+}
