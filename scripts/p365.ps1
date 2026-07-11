@@ -134,7 +134,7 @@ function Invoke-Doctor {
 
 function Get-DayFolder {
     param([int]$DayNumber)
-    return "Day{0:D3}" -f $DayNumber
+    return "{0:D3}" -f $DayNumber
 }
 
 function Invoke-Start {
@@ -143,7 +143,12 @@ function Invoke-Start {
 
     # 1. Git pull
     Write-Host "Pulling latest changes..." -ForegroundColor Gray
-    git pull 2>&1 | Out-Null
+    git pull
+
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Git pull failed." -ForegroundColor Red
+        return
+    }
 
     # 2. Increment currentDay
     $nextDay = $cfg.english365.currentDay + 1
@@ -179,7 +184,7 @@ function Invoke-Start {
     Write-Host "===== Day $nextDay Checklist =====" -ForegroundColor Cyan
     Write-Host "  [ ] Read Lesson.md" -ForegroundColor White
     Write-Host "  [ ] Study Anki cards" -ForegroundColor White
-    Write-Host "  [ ] Write Reflection.md" -ForegroundColor White
+    Write-Host "  [ ] Complete Reflection section" -ForegroundColor White
     Write-Host "  [ ] Review Progress.md" -ForegroundColor White
     Write-Host ""
 
