@@ -1,17 +1,17 @@
 # Project365
 
-> Phát triển bản thân mỗi ngày, 365 ngày trong năm.
+> Self-improvement every day, 365 days a year.
 
-Project365 là hệ thống mã nguồn mở giúp phát triển bản thân toàn diện qua từng ngày. Dự án được quản lý theo phương pháp Agile, chia thành các Sprint như một dự án phần mềm thực tế.
+Project365 is an open-source system for comprehensive self-development, managed using Agile methodology like a real software project. Each day is a step toward building better habits, knowledge, and skills.
 
-## Mục tiêu học 365 ngày
+## Goals
 
-- Xây dựng thói quen học tập và làm việc mỗi ngày.
-- Học tiếng Anh, lập trình, AI, đọc sách, tài chính, sức khỏe, giao tiếp.
-- Hệ thống quản lý tri thức cá nhân bền vững.
-- Áp dụng tư duy kỹ thuật vào phát triển bản thân.
+- Build a sustainable daily learning and working habit.
+- Learn English, programming, AI, reading, finance, health, and communication.
+- Create a personal knowledge management system.
+- Apply engineering thinking to personal development.
 
-## Cấu trúc dự án
+## Repository Structure
 
 ```
 Project365/
@@ -19,52 +19,62 @@ Project365/
 ├── LICENSE
 ├── CHANGELOG.md
 ├── .gitignore
-├── English365/          # Module học tiếng Anh
+├── English365/          # English learning module
 │   ├── README.md
 │   ├── Progress.md
-│   ├── templates/       # Template chuẩn cho Lesson Pack
-│   ├── Resources/       # Tài liệu dùng chung
-│   ├── 001/
-│   ├── 002/
-│   ├── 003/
-│   ├── 004/
+│   ├── templates/       # Lesson Pack templates
+│   ├── Resources/       # Shared resources
+│   ├── 001/             # Day 001 lesson
 │   └── ...
-├── docs/                # Tài liệu kỹ thuật
-├── scripts/             # Scripts tự động hóa
-└── assets/              # Tài nguyên đa phương tiện
+├── docs/                # Technical documentation
+├── scripts/             # Automation scripts
+├── templates/           # Project templates
+├── prompts/             # AI prompts
+└── assets/              # Multimedia assets
 ```
 
-## Hướng dẫn sử dụng
+## Learning Workflow
 
-1. Clone repository:
-   ```bash
-   git clone https://github.com/<username>/Project365.git
-   ```
-2. Vào module muốn học (ví dụ: `English365/`).
-3. Mỗi ngày mở thư mục `001/`, `002/`, ... và làm theo Lesson Pack.
-4. Theo dõi tiến độ tại `Progress.md`.
-5. Đóng góp qua Pull Request.
+1. **Morning** — Pull latest changes, review yesterday, set daily goal.
+2. **Study** — Complete the Lesson Pack (Vocabulary, Grammar, Reading, Listening, Speaking, Writing).
+3. **Evening** — Pronunciation, Shadowing, Review, Reflection, Anki flashcards.
+4. **Commit** — Stage changes, write a conventional commit, push.
 
-## Development Workflow
+## Release Workflow
 
-| Sprint | Nội dung |
-|--------|----------|
+| Release | Description |
+|---------|-------------|
+| **A — Foundation** | Project structure, documentation, standards |
+| **B — Lesson Packages** | Lesson generators, templates, automation |
+| **C — CLI** | Command-line interface for daily workflow |
+| **D — Dashboard** | Web dashboard and statistics |
+
+## Sprint Strategy
+
+| Sprint | Content |
+|--------|---------|
 | **Sprint 1** | Project Structure |
 | **Sprint 2** | Lesson Generator |
 | **Sprint 3** | AI English Coach |
 | **Sprint 4** | Automation |
 | **Sprint 5** | Speech & Pronunciation |
 
-## Roadmap Sprint
+## Weekly Review
 
-| Sprint | Nội dung |
-|--------|----------|
-| **Sprint 1** | Khởi tạo dự án |
-| **Sprint 2** | Chuẩn hóa English365 |
-| **Sprint 3** | Tự động sinh Lesson Pack |
-| **Sprint 4** | Website Project365 |
-| **Sprint 5** | Dashboard và thống kê |
+Every Sunday, review the past week:
+- What was learned
+- What went well
+- What needs improvement
+- Plan for next week
 
-## Giấy phép
+## Monthly Review
 
-Dự án được phân phối dưới giấy phép MIT. Xem [LICENSE](./LICENSE) để biết thêm chi tiết.
+Last calendar day of the month:
+- Comprehensive review of all monthly progress
+- Update Progress.md
+- Adjust learning strategy
+- Plan next month's goals
+
+## License
+
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more information.
